@@ -1,0 +1,225 @@
+<html>
+<head>
+<link rel="shortcut icon" href="assets/img/yayasan-putrapakuan.png">
+<title>Putra Pakuan Hotspot | STATUS</title>
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta charset="utf-8">
+<meta name="theme-color" content="#3e95ff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" href="assets/css/putrapakuan-v5.css">
+<link rel="stylesheet" href="assets/css/animation.css">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/aos.css">
+<script language="JavaScript">
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+    if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+    popup = open('$(link-advert)', 'hotspot_advert', '');
+    setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+    if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+    window.close();
+    return false;
+    }
+</script>
+</head>
+<body $(if advert-pending == 'yes')
+    onLoad="openAdvert()"
+$(endif)>
+    <nav class="d-flex justify-content-between">
+          <div class="col-6 d-flex align-items-center">
+           <img src="assets/img/svg/person-fill.svg" alt="">
+          <p>$(username)</p>
+          </div>
+               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+               </svg>
+               </button>
+     </nav>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-capitalize" id="offcanvasExampleLabel">$(username)</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+     <ul class="list-group list-group-flush">
+       <li class="list-group-item">
+
+     <!-- Button trigger modal -->
+     <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+
+     <button class="btn" data-bs-toggle="modal" data-bs-target="#speedTest">
+          &#128640; Speed Test
+     </button>
+     </a>
+
+     </li>
+       <li class="list-group-item">
+          <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#pengumuman">
+               &#128204; Info
+          </button>
+
+          </a>
+       </li>
+       <li class="list-group-item">
+       <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+         &#127760; Website
+       </a>
+     <div class="collapse mt-1" id="collapseExample">
+       <div class="card card-body border-0">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><img src="assets/img/yayasan-putrapakuan.png" alt="Yayasan Putra Pakuan" width="15px"> <a href="http://putrapakuan.sch.id">Yayasan Putra Pakuan</a></li>
+            <li class="list-group-item"><img src="assets/img/sdit-putrapakuan.png" alt="SDIT Putra Pakuan" width="15px"> <a href="http://sdit.putrapakuan.sch.id">SDIT Putra Pakuan</a></li>
+            <li class="list-group-item"><img src="assets/img/smp-putrapakuan.png" alt="SMP Putra Pakuan" width="15px"> <a href="http://smp.putrapakuan.sch.id">SMP Putra Pakuan</a></li>
+            <li class="list-group-item"><img src="assets/img/smk-putrapakuan.png" alt="SMK Putra Pakuan" width="15px"> <a href="http://smk.putrapakuan.sch.id">SMK Putra Pakuan</a></li>
+          </ul>
+       </div>
+     </div>
+       </li>
+     <li class="list-group-item">
+          <a href="https://tkj-family.github.io/project/tema-putra-pakuan-hotspot-mikrotik.html" target="_blank" class="btn">&#127917; Tentang</a>
+     </li>
+       <li class="list-group-item">
+           <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+               $(if login-by-mac != 'yes')
+               <input type="submit" name="submit" value="KELUAR" class="btn btn-primary w-100 mt-3">
+               $(endif)
+          </form>
+     </li>
+     </ul>
+    </div>
+    <!-- Do Not Remove This Credit! -->
+     <small class="text-secondary position-absolute bottom-0 end-0 p-2">Powered By <a href="https://tkj-family.github.io" class="link-secondary" target="_blank">TKJ FAMILY</a></small>
+     <!-- Do Not Remove This Credit! -->
+  </div>
+</div>
+    <div class="container height">
+        <div class="main w-100 h-100 d-flex justify-content-center align-items-center">
+                    <table class="status-table table text-light m-auto mt-5 ps-2 pe-2">
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">IP address</td>
+                             <td class="text-end pt-4 pb-4">$(ip)</td>
+                        </tr>
+
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">Bytes up / down</td>
+                             <td class="text-end pt-4 pb-4">$(bytes-in-nice) / $(bytes-out-nice)</td>
+                        </tr>
+
+                    $(if session-time-left)
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">Connected / left</td>
+                             <td class="text-end pt-4 pb-4">$(uptime) / $(session-time-left)</td>
+                        </tr>
+                    $(else)
+
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">Connected</td>
+                             <td class="text-end pt-4 pb-4">$(uptime)</td>
+                        </tr>
+
+                    $(endif)
+
+                    $(if blocked == 'yes')
+
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">Status</td>
+                             <td class="text-end pt-4 pb-4"> Connected</td>
+                        </tr>
+
+                    $(elif refresh-timeout)
+
+                        <tr>
+                             <td class="pt-4 pb-4 fw-bold">Status refresh</td>
+                             <td class="text-end pt-4 pb-4">$(refresh-timeout)</td>
+                        </tr>
+
+                    $(endif)
+
+          </table>
+        </div>
+    </div>
+
+     <!-- Pengumuman Modal -->
+     <div class="modal fade z-index-5" id="pengumuman" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered modal-fullscreen m-pad">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="staticBackdropLabel">Informasi saat ini</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+
+               <!-- iframe info dari website lain atau hanya teks yang ditampilkan -->
+
+               <!-- Url -->
+               <!-- <iframe src="info.html" width="100%" height="100%"></iframe> -->
+
+               <!-- File -->
+               <iframe src="assets/img/info/PC-testing-login.net_login.png" width="100%" height="100%"></iframe>
+
+               <!-- Image -->
+               <!-- <img src="assets/img/info/example.jpg" alt="Info Image"> -->
+
+               <!--halaman default yang ditampilkan adalah info.html
+                    untuk mendapatkan tampilan yang lebih baik disarankan menggunakan
+                    file pdf, url, gambar dan .html
+                    Dapat menggunakan semua url dan beberapa file
+                    contoh:
+                    - .pdf
+                    - .txt
+                    - .html -->
+
+           </div>
+          <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal SpeedTest -->
+     <div class="modal fade z-index-5" id="speedTest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered modal-fullscreen m-pad">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="staticBackdropLabel">SpeedTest</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <iframe src="https://fast.com/id/" width="100%" height="100%"></iframe>
+           </div>
+           <div class="modal-footer d-flex justify-content-between">
+               <p>SpeedTest by <a href="https://fast.com/id/">fast.com</a></p>
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<!-- Aos JS -->
+<script src="assets/js/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+</body>
+</html>

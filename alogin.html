@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="theme-color" content="#3e95ff">
+     <link rel="shortcut icon" href="assets/img/yayasan-putrapakuan.png">
+     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+     <meta http-equiv="expires" content="-1">
+     <title>Putra Pakuan Hotspot | Redirect</title>
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="assets/css/putrapakuan-v5.css">
+<script language="JavaScript">
+    function startClock() {
+        $(if popup == 'true')
+        open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+         $(endif)
+         setTimeout(function () {
+        window.location.href = '$(link-status)';
+   }, 10000);
+    }
+</script>
+</head>
+<body onLoad="startClock()">
+    <div class="h-100 loading-overview">
+     <div class="loading-box position-absolute bottom-0 start-50 translate-middle-x ps-3 pe-3">
+          <div class="btn-loading w-100">
+               <a href="$(link-status)" class="btn btn-danger w-100 btn-lg mb-3">Klik untuk lanjutkan</a>
+               <p class="text-light text-center"><i>Halaman akan otomatis redirect dalam <strong id="countdown"></strong></i></p>
+          </div>
+     </div>
+    </div>
+<script>
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Mengalihkan ...";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft;
+  }
+  timeleft -= 1;
+}, 1000);
+</script>
+</body>
+</html>

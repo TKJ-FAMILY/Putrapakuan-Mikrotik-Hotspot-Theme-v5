@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" href="assets/img/yayasan-putrapakuan.png">
+	<meta name="theme-color" content="#3e95ff">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/putrapakuan-v5.css">
+	<link rel="stylesheet" href="assets/css/animation.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/aos.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="expires" content="-1" />
+	<title>Putra Pakuan Hotspot | MASUK</title>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+</head>
+<body class="d-flex align-items-center justify-content-center the-pad">
+<script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post" style="display: none;">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+
+	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript">
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	</script>
+$(endif)
+
+<main class="container-lg">
+	<div class="row">
+		<div class="welcome col-lg-7 d-flex align-items-center justify-content-center flex-column pe-5">
+		<div class="card h-100">
+		  <div class="card-header">
+		    <span class="fs-3 text-center d-block">Motivasi Hari Ini</span>
+		  </div>
+		  <div class="card-body text-start">
+		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+		    <div class="carousel-item h-100 active">
+			<figure>
+			  <blockquote class="blockquote fs-4">
+			    <p>
+					Ilmu itu bagaikan binatang buruan, sedangkan pena adalah pengikatnya, maka ikatlah buruanmu dengan tali yang kuat.
+			    </p>
+			  </blockquote>
+			  <figcaption class="blockquote-footer mt-4">
+			    <cite title="Source Title">Imam Syafi'i</cite>
+			  </figcaption>
+			</figure>
+		    </div>
+		    <div class="carousel-item h-100">
+			<figure>
+			  <blockquote class="blockquote fs-4">
+			    <p>
+			    	Semua keberhasilan terbaik Anda, datang setelah kekecewaan besar yang Anda hadapi dengan sabar.
+			    </p>
+			  </blockquote>
+			  <figcaption class="blockquote-footer mt-4">
+			    <cite title="Source Title">Mario Teguh</cite>
+			  </figcaption>
+			</figure>
+		    </div>
+		    <div class="carousel-item h-100">
+			<figure>
+			  <blockquote class="blockquote fs-4">
+			    <p>
+			    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			    </p>
+			  </blockquote>
+			  <figcaption class="blockquote-footer mt-4">
+			    Someone famous in <cite title="Source Title">Source Title</cite>
+			  </figcaption>
+			</figure>
+		    </div>
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="form-login col-lg-5">
+			<div class="brand-logo mb-4">
+				<img src="assets/img/yayasan-putrapakuan.png" alt="">
+			</div>
+		$(if error)
+		<div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+		   $(error)
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		$(endif)
+		<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+			<div class="input-group input-group-lg mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-lg"><img src="assets/img/svg/person-fill.svg" alt="Username" width="20px"></span>
+				<input type="username" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Enter username" value="$(username)" autofocus required autocomplete="off" tabindex="1">
+			</div>
+			<div class="input-group input-group-lg mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-lg"><img src="assets/img/svg/pass.svg" alt="Password" width="20px"></span>
+				<input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Password" tabindex="2" required>
+			</div>
+			<div class="btn-submit">
+				<input type="submit" name="submit" value="Masuk" class="fw-bold btn btn-primary btn-lg w-100 shadow-md" tabindex="3">
+			</div>
+		</form>
+		<!-- Advertisement Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Advertisement</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+
+			<!-- Advertisement Image -->
+		        <img src="assets/img/ads/ads-modal.jpg" alt="Advertisement Image" width="100%">
+			<!-- default name file (ads-modal.jpg) -->
+
+			 </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</div>
+	</div>
+</main>
+<script type="text/javascript">
+var modal = document.getElementById("errorModal");
+
+var span = document.getElementsByClassName("close")[0];
+
+			span.onclick = function() {
+  modal.style.display = "none";
+}
+			window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<script>
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+<!-- Aos JS -->
+<script src="assets/js/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/bootstrap.esm.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

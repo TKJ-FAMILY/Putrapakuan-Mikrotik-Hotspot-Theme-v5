@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="assets/img/yayasan-putrapakuan.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#3e95ff">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<title>Putra Pakuan Hotspot | KELUAR</title>
+<link rel="stylesheet" href="assets/css/putrapakuan-v5.css">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<script>
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+</script>
+</head>
+
+<body>
+    <div class="w-logout m-auto p-5">
+         <img src="assets/img/svg/see-you-soon-rafiki.svg" alt="Exit">
+                <table class="table text-light mt-3">
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">Username</td>
+                         <td class="text-end pt-4 pb-4">$(username)</td>
+                    </tr>
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">IP address</td>
+                         <td class="text-end pt-4 pb-4">$(ip)</td>
+                    </tr>
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">MAC address</td>
+                         <td class="text-end pt-4 pb-4">$(mac)</td>
+                    </tr>
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">Session time</td>
+                         <td class="text-end pt-4 pb-4">$(uptime)</td>
+                    </tr>
+                    $(if session-time-left)
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">Time left</td>
+                         <td class="text-end pt-4 pb-4">$(session-time-left)</td>
+                    </tr>
+                    $(endif)
+                    <tr>
+                         <td class="pt-4 pb-4 fw-bold">Bytes up / down:</td>
+                         <td class="text-end pt-4 pb-4">$(bytes-in-nice) / $(bytes-out-nice)</td>
+                    </tr>
+                </table>
+                <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <input type="submit" value="MASUK" class="btn btn-primary w-100 mt-3">
+                </form>
+    </div>
+
+</body>
+</html>
